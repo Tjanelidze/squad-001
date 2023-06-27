@@ -2,10 +2,10 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 45fr 55fr;
+  font-family: "Nunito";
 }
 
 .hero-section-header {
-  font-family: "Nunito";
   height: 8%;
   padding: 30px 60px;
   display: flex;
@@ -21,20 +21,23 @@ body {
 
 .hero-section-body {
   height: 92%;
-  background: url(./img/Landing\ page-\ scrolling\ photo.png);
+  background: url(../img/Landing-page-photo.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .form-section {
-  font-family: "Nunito";
   background-color: #fd5334;
+}
+
+.welcome-box {
+  width: 85%;
+  margin: 265px auto;
 }
 
 .left-text {
   font-weight: 800;
   font-size: 80px;
-  line-height: 109px;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -53,9 +56,6 @@ h1 {
   line-height: 109px;
   text-transform: uppercase;
   color: #ffffff;
-  position: absolute;
-  left: 1008px;
-  top: 265px;
 }
 .get-startes {
   background: #212529;
@@ -70,10 +70,9 @@ h1 {
   display: flex;
   align-items: center;
   gap: 12px;
-  position: absolute;
-  left: 1008px;
-  top: 601px;
   border: none;
+  padding: 24px 14px;
+  margin-top: 102px;
 }
 
 .get-startes img {
