@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <link rel="stylesheet" href="../styles/experiance.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/experiance.js" defer></script>
+    <title>Registration-Chess experience</title>
+  </head>
+  <body>
+    <div class="hero-section">
+      <header class="hero-section-header">
+        <img
+          class="hero-section-header-icon"
+          src="../img/Vector-icon.svg"
+          alt="Vector-icon"
+        />
+        <p class="hero-header-text">Redbarry Knight Cup</p>
+      </header>
+      <div class="hero-section-body"></div>
+    </div>
+
+    <div class="form-section">
+      <header class="form-section-header">
+        <p>First Step Is Done, Continue To Finish Onboarding</p>
+      </header>
+      <div class="form-section-body">
+        <div class="container">
+          <div class="success nav-box">
+            <img
+              src="../img/Success-Icon.svg"
+              alt="Success-Icon"
+              class="Success-Icon"
+            />
+          </div>
+          <hr />
+          <div class="number nav-box">
+            <span>2</span>
+          </div>
+        </div>
+
+        <div class="container2">
+          <h2>Chess experience</h2>
+          <h3>This Is Basic Information Fields</h3>
+        </div>
+
+        <div class="dropdown">
+          <input
+            type="text"
+            class="textBox"
+            placeholder="level of knowledge"
+            readonly
+          />
+          <div class="option">
+            <div onclick="show('Beginner')">Beginner</div>
+            <div onclick="show('Intermediate')">Intermediate</div>
+            <div onclick="show('Professional')">Professional</div>
+          </div>
+        </div>
+        <div class="participated">
+          <p class="participated-text">
+            Have you participated in the Redberry Championship?
+          </p>
+          <div class="yesorno">
+            <div class="yes">
+              <input type="radio" name="radio" id="y1" value="yes" />
+              <label for="y1">Yes</label>
+            </div>
+            <div class="no">
+              <input type="radio" name="radio" id="n1" value="no" />
+              <label for="n1">no</label>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="back-button">Back</button>
+          <button class="done-button">Done</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function show(anything) {
+        document.querySelector(".textBox").value = anything;
+      }
+
+      let dropdown = document.querySelector(".dropdown");
+      dropdown.onclick = function () {
+        dropdown.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>
