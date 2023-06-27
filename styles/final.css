@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+}
+
+.hero-section-header {
+  font-family: "Nunito";
+  height: 8%;
+  padding: 30px 60px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #7025fb;
+}
+.hero-header-text {
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.hero-section-body {
+  height: 92%;
+  background: url(./img/unsplash_27LH_0jXKYI.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-section {
+  background: url(./img/Onboarding\ completed!.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
