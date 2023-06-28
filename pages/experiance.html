@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <link rel="stylesheet" href="../styles/experiance.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../js/experiance.js" defer></script>
+
     <title>Registration-Chess experience</title>
   </head>
   <body>
@@ -46,12 +45,15 @@
         </div>
 
         <div class="dropdown">
-          <input
-            type="text"
-            class="textBox"
-            placeholder="level of knowledge"
-            readonly
-          />
+          <div class="drop-down-wrapper">
+            <input
+              type="text"
+              class="textBox"
+              placeholder="level of knowledge"
+              readonly
+            />
+            <span class="star"></span>
+          </div>
           <div class="option">
             <div onclick="show('Beginner')">Beginner</div>
             <div onclick="show('Intermediate')">Intermediate</div>
@@ -64,11 +66,23 @@
           </p>
           <div class="yesorno">
             <div class="yes">
-              <input type="radio" name="radio" id="y1" value="yes" />
+              <input
+                class="input-yes"
+                type="radio"
+                name="radio"
+                id="y1"
+                value="yes"
+              />
               <label for="y1">Yes</label>
             </div>
             <div class="no">
-              <input type="radio" name="radio" id="n1" value="no" />
+              <input
+                class="input-no"
+                type="radio"
+                name="radio"
+                id="n1"
+                value="no"
+              />
               <label for="n1">no</label>
             </div>
           </div>
@@ -79,15 +93,6 @@
         </div>
       </div>
     </div>
-    <script>
-      function show(anything) {
-        document.querySelector(".textBox").value = anything;
-      }
-
-      let dropdown = document.querySelector(".dropdown");
-      dropdown.onclick = function () {
-        dropdown.classList.toggle("active");
-      };
-    </script>
+    <script src="../js/experiance.js"></script>
   </body>
 </html>
