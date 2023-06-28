@@ -122,8 +122,18 @@ hr {
   width: 174px;
   border-color: #e6e0e04d;
 }
-
-
+.drop-down-wrapper {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.star::after {
+  color: red;
+  content: "*";
+  position: absolute;
+  top: 2px;
+  left: 135px;
+}
 
 .dropdown {
   position: relative;
@@ -137,7 +147,7 @@ hr {
   width: 8px;
   height: 8px;
   right: 20px;
-  top: 15px;
+  top: 5px;
   z-index: 10000;
   width: 8px;
   border: 1px solid #3333337e;
@@ -189,14 +199,13 @@ hr {
 }
 
 .dropdown.active::before {
-  top: 22px;
+  top: 10px;
   transform: rotate(-225deg);
 }
 
 .dropdown.active .option {
   display: block;
 }
-
 
 .buttons {
   display: flex;
@@ -232,18 +241,16 @@ hr {
   text-transform: capitalize;
 }
 
-h4 { 
+h4 {
   font-weight: 400;
   font-size: 16px;
-
 }
 
-
-.participated { 
+.participated {
   margin-top: 10%;
 }
 
-.yesorno { 
+.yesorno {
   margin-top: 3%;
   display: flex;
   gap: 16px;
