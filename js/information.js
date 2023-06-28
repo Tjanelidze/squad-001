@@ -115,7 +115,7 @@ nextButton.addEventListener("click", function (event) {
       count++;
     }
   }
-  if (count === 4) {
+  if (count === Object.keys(userInformation).length) {
     localStorage.setItem("userInformation", JSON.stringify(userInformation));
     doubleGreenSign.style.display = "block";
   }
