@@ -21,13 +21,13 @@ body {
 
 .hero-section-body {
   height: 92%;
-  background: url(./img/unsplash_27LH_0jXKYI.svg);
+  background: url(../images/unsplash_27LH_0jXKYI.svg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .form-section {
-  background: url(./img/Onboarding\ completed!.png);
+  background: url(../images/Onboarding\ completed!.png);
   background-repeat: no-repeat;
   background-position: center;
 }
