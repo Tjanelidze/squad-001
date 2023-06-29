@@ -1,16 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Open Sans", sans-serif;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 45fr 55fr;
   height: 100vh;
 }
 
@@ -26,23 +17,19 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: rgba(112, 37, 251, 1);
-  padding: 20px 50px;
-  height: 9%;
-}
-
-.hero-section-header-icon {
-  width: 18px;
+  background-color: #7025fb;
+  padding: 30px 60px;
+  height: 8%;
 }
 
 .hero-header-text {
   color: white;
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .hero-section-body {
-  height: 91%;
+  height: 92%;
   background: url("../images/main-image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,7 +39,8 @@ body {
 .quote {
   font-weight: 800;
   font-size: 26px;
-  line-height: 35px;
+  font-style: italic;
+  line-height: 45px;
   text-transform: uppercase;
   color: #212529;
 }
@@ -60,14 +48,16 @@ body {
 .author {
   font-weight: 500;
   font-size: 24px;
-  line-height: 33px;
+  font-style: italic;
+  line-height: 60px;
   text-transform: uppercase;
   color: #e5e6e8;
 }
 
 .quote-author-div {
   position: absolute;
-  top: 50%;
+  top: 176px;
+  left: 105px;
   width: 423px;
 }
 
@@ -79,7 +69,7 @@ body {
   display: flex;
   align-items: center;
   padding-left: 48px;
-  height: 9%;
+  height: 8%;
   border-bottom: 1px solid rgba(185, 180, 195, 0.3);
 }
 
@@ -144,8 +134,8 @@ body {
 .Personal-information-text {
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
   color: #000000;
+  margin-top: 8px;
 }
 
 .Chess-experience-div {
@@ -172,8 +162,8 @@ body {
 .Chess-experience-text {
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
   color: #000000;
+  margin-top: 8px;
 }
 
 .eror-window {
