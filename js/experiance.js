@@ -13,6 +13,16 @@ let character = "";
 let countOfYesAndNo = "";
 let characterId = "";
 
+let userInformationAndExperiance = {
+  name: "",
+  email: "",
+  phone: "",
+  date_of_birth: "",
+  experience_level: "",
+  already_participated: "",
+  character_id: "",
+};
+
 //წითელი ვარსკვლავი
 
 function redStar(a, b) {
@@ -28,12 +38,10 @@ function redStar(a, b) {
 fetch("https://chess-tournament-api.devtest.ge/api/grandmasters")
   .then((response) => response.json())
   .then((data) => {
-    // console.log(data);
     for (let i = 0; i < 4; i++) {
       personName[i].innerHTML = data[i].name;
       personImage[i].src = data[i].image;
       imageContainer[i].appendChild(personImage[i]);
-      characterId = data[i].id;
     }
   });
 
@@ -42,8 +50,6 @@ fetch("https://chess-tournament-api.devtest.ge/api/grandmasters")
 imageContainer.forEach(function (element, index) {
   element.addEventListener("click", function () {
     textBox2.value = personName[index].innerHTML;
-    // userInformationObj["character_id"] = characterId[index];
-    // console.log(userInformationObj);
   });
 });
 
