@@ -10,11 +10,12 @@ const xSign = document.querySelector(".x-sign");
 let inputNames = ["Name", "email address", "Phone number", "Date of birth"];
 const userInformationObj = {};
 const nextButton = document.querySelector(".Next-button");
+const dateInput = allInput[3];
 let regexArray = [
   /^[a-zA-Z]+ [a-zA-Z]+$/, // fullNameTester
   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, // emailTester
-  /^((\+995)|(0{2}995)|0)5\d{8}$/, // phoneNumberTester
-  /^\d{1,2}\/\d{1,2}\/\d{4}$/, // dateOfBirthTester
+  /^[0-9]{9}$/, // phoneNumberTester
+  /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19[0-9][0-9]|20[0-1][0-9]|2020|2021|2022|2023)$/, // dateOfBirthTester
 ];
 
 // x ნიშანი
@@ -58,6 +59,24 @@ function erorOFInformation(element, text) {
   element.style.color = "#DC3545";
   erorP.innerHTML = erorP.innerHTML += "Please enter valid " + text + "<br>";
 }
+
+//ბოლო,თარიღის ინფუთი
+
+dateInput.addEventListener("input", function () {
+  if (dateInput.value.length == 2) {
+    dateInput.value += "/";
+  }
+  if (dateInput.value.length == 5) {
+    dateInput.value += "/";
+  }
+});
+
+dateInput.addEventListener("keydown", function (event) {
+  if (event.key === "Backspace" && dateInput.value.endsWith("/")) {
+    dateInput.value = dateInput.value.slice(0, -1);
+  }
+});
+
 //ნექსთ ღილაკი
 
 nextButton.addEventListener("click", function (event) {
@@ -70,11 +89,18 @@ nextButton.addEventListener("click", function (event) {
       erorOFInformation(allInput[i], inputNames[i]);
     }
   }
+  for (let i = allInput.length - 1; i >= 0; i--) {
+    if (!regexArray[i].test(allInput[i].value)) {
+      invalidEmailP.innerHTML = "invalid ";
+      invalidEmailP.innerHTML += inputNames[i];
+    }
+  }
   if (Object.keys(userInformationObj).length == inputNames.length) {
     for (let key in userInformationObj) {
       let index = inputNames.indexOf(key);
       if (index >= 0) {
         localStorage.setItem(inputNames[index], userInformationObj[key]);
+        window.open("experiance.html");
       }
     }
   }
@@ -90,36 +116,5 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       allInput[i].parentElement.style.setProperty("--content", "");
     }
-  }
-});
-
-//ბოლო,თარიღის ინფუთი
-
-allInput[3].addEventListener("input", function () {
-  if (allInput[3].value.length == 2) {
-    allInput[3].value += "/";
-  }
-  if (allInput[3].value.length == 5) {
-    allInput[3].value += "/";
-  }
-
-  // let day = parseInt(allInput[3].value.slice(0, 2));
-  // let month = parseInt(allInput[3].value.slice(3, 5));
-  // let year = parseInt(allInput[3].value.slice(6, 10));
-  // if (day < 1 || day > 31) {
-  //   allInput[3].value = allInput[3].value.slice(0, 3);
-  // }
-  // if (month < 1 || month > 12) {
-  //   allInput[3].value = allInput[3].value.slice(0, 6);
-  // }
-
-  // if (year < 1900 || year > 2023) {
-  //   allInput[3].value = allInput[3].value.slice(0, 10);
-  // }
-});
-
-allInput[3].addEventListener("keydown", function (event) {
-  if (event.key === "Backspace" && allInput[3].value.endsWith("/")) {
-    allInput[3].value = allInput[3].value.slice(0, -1);
   }
 });
