@@ -21,7 +21,7 @@ body {
 
 .hero-section-body {
   height: 92%;
-  background: url(../img/Landing-page-photo.png);
+  background: url(../images/Landing-page-photo.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -73,8 +73,11 @@ h1 {
   border: none;
   padding: 24px 14px;
   margin-top: 102px;
+  cursor: pointer;
 }
-
+a {
+  text-decoration: none;
+}
 .get-startes img {
   width: 24px;
 }

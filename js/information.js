@@ -7,15 +7,8 @@ const personalInformacionBox = document.querySelector(
 const doubleGreenSign = document.querySelector(".double-green-sign");
 const invalidEmailP = document.querySelector(".invalid-email-p");
 const xSign = document.querySelector(".x-sign");
-
 let inputNames = ["Name", "email address", "Phone number", "Date of birth"];
-let array = [];
-const userInformation = {
-  Name: "",
-  "email address": "",
-  "Phone number": "",
-  "Date of birth": "",
-};
+const userInformationObj = {};
 const nextButton = document.querySelector(".Next-button");
 let regexArray = [
   /^[a-zA-Z]+ [a-zA-Z]+$/, // fullNameTester
@@ -57,71 +50,50 @@ allInput.forEach(function (element, index) {
   });
 });
 
-// ერორის ფანჯარა
+//ერორი
 
-function erorwindow01() {
-  erorP.innerHTML = "";
-  for (let i = 0; i < array.length; i++) {
-    invalidEmailP.innerHTML = "Invalid " + array[0];
-    erorP.innerHTML += "Please enter valid " + array[i] + "<br>";
-  }
-  if (array.length == 0) {
-    erorWindow.style.display = "none";
-  } else {
-    erorWindow.style.display = "inline";
-  }
+function erorOFInformation(element, text) {
+  erorWindow.style.display = "inline";
+  element.style.backgroundColor = "#FFEFEF";
+  element.style.color = "#DC3545";
+  erorP.innerHTML = erorP.innerHTML += "Please enter valid " + text + "<br>";
 }
-//  ერორების არაიდან ვიგებ იმ წევრებს რომლებმაც გაიარეს რეგეხი
-
-allInput.forEach(function (element, index) {
-  element.addEventListener("input", function () {
-    if (regexArray[index].test(element.value)) {
-      array.splice(array.indexOf(inputNames[index]), 1);
-    }
-    erorwindow01();
-  });
-});
-
-// ვქმნი ობჯექთს მომხმარებლის მონაცემების შესანახად
-
-allInput.forEach(function (element, index) {
-  element.addEventListener("input", function () {
-    if (regexArray[index].test(element.value)) {
-      userInformation[inputNames[index]] = element.value;
-    } else {
-      userInformation[inputNames[index]] = "";
-    }
-    if (element.value == "") {
-      userInformation[inputNames[index]] = "";
-    }
-  });
-});
-
 //ნექსთ ღილაკი
 
 nextButton.addEventListener("click", function (event) {
   event.preventDefault();
-
-  let count = 0;
-  for (let element in userInformation) {
-    if (userInformation[element] == "") {
-      if (array.indexOf(element) == -1) {
-        array.push(element);
-        allInput[inputNames.indexOf(element)].style.backgroundColor = "#FFEFEF";
-        allInput[inputNames.indexOf(element)].style.color = "#DC3545";
-      }
-      erorwindow01();
+  erorP.innerHTML = null;
+  for (let i = 0; i < allInput.length; i++) {
+    if (regexArray[i].test(allInput[i].value)) {
+      userInformationObj[inputNames[i]] = allInput[i].value;
     } else {
-      count++;
+      erorOFInformation(allInput[i], inputNames[i]);
     }
   }
-  if (count === Object.keys(userInformation).length) {
-    localStorage.setItem("userInformation", JSON.stringify(userInformation));
-    doubleGreenSign.style.display = "block";
+  if (Object.keys(userInformationObj).length == inputNames.length) {
+    for (let key in userInformationObj) {
+      let index = inputNames.indexOf(key);
+      if (index >= 0) {
+        localStorage.setItem(inputNames[index], userInformationObj[key]);
+      }
+    }
   }
 });
 
-// **********************************************************
+//დარეფრეშების შემთხვევაში ვინარჩუნებთ მონაცემებს
+
+document.addEventListener("DOMContentLoaded", function () {
+  for (let i = 0; i < inputNames.length; i++) {
+    allInput[i].value = localStorage.getItem(inputNames[i]);
+    if (allInput[i].value !== "") {
+      allInput[i].parentElement.style.setProperty("--content", "*");
+    } else {
+      allInput[i].parentElement.style.setProperty("--content", "");
+    }
+  }
+});
+
+//ბოლო,თარიღის ინფუთი
 
 allInput[3].addEventListener("input", function () {
   if (allInput[3].value.length == 2) {
@@ -130,20 +102,22 @@ allInput[3].addEventListener("input", function () {
   if (allInput[3].value.length == 5) {
     allInput[3].value += "/";
   }
-  let day = parseInt(allInput[3].value.slice(0, 2));
-  let month = parseInt(allInput[3].value.slice(3, 5));
-  let year = parseInt(allInput[3].value.slice(6, 10));
-  if (day < 1 || day > 31) {
-    allInput[3].value = allInput[3].value.slice(0, 3);
-  }
-  if (month < 1 || month > 12) {
-    allInput[3].value = allInput[3].value.slice(0, 6);
-  }
 
-  if (year < 1900 || year > 2023) {
-    allInput[3].value = allInput[3].value.slice(0, 9);
-  }
+  // let day = parseInt(allInput[3].value.slice(0, 2));
+  // let month = parseInt(allInput[3].value.slice(3, 5));
+  // let year = parseInt(allInput[3].value.slice(6, 10));
+  // if (day < 1 || day > 31) {
+  //   allInput[3].value = allInput[3].value.slice(0, 3);
+  // }
+  // if (month < 1 || month > 12) {
+  //   allInput[3].value = allInput[3].value.slice(0, 6);
+  // }
+
+  // if (year < 1900 || year > 2023) {
+  //   allInput[3].value = allInput[3].value.slice(0, 10);
+  // }
 });
+
 allInput[3].addEventListener("keydown", function (event) {
   if (event.key === "Backspace" && allInput[3].value.endsWith("/")) {
     allInput[3].value = allInput[3].value.slice(0, -1);

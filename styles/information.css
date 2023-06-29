@@ -43,7 +43,7 @@ body {
 
 .hero-section-body {
   height: 91%;
-  background: url("../img/main-image.png");
+  background: url("../images/main-image.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

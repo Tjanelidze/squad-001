@@ -28,7 +28,7 @@ body {
 
 .hero-section-body {
   height: 92%;
-  background: url("../img/Redbeary.png");
+  background: url("../images/Redbeary.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -122,7 +122,14 @@ hr {
   width: 174px;
   border-color: #e6e0e04d;
 }
-.drop-down-wrapper {
+.drop-down-options {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+
+  gap: 23px;
+}
+.drop-down-input-wrapper {
   align-items: center;
   display: flex;
   position: relative;
@@ -131,13 +138,25 @@ hr {
   color: red;
   content: "*";
   position: absolute;
-  top: 2px;
+  top: 10px;
   left: 135px;
+}
+.drop-down2-input-wrapper {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.star2::after {
+  color: red;
+  content: "*";
+  position: absolute;
+  top: 10px;
+  left: 160px;
 }
 
 .dropdown {
   position: relative;
-  margin-top: 100px;
+
   width: 300px;
   height: 50px;
 }
@@ -163,7 +182,6 @@ hr {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   cursor: pointer;
   background: #fff;
   border: none;
@@ -205,6 +223,15 @@ hr {
 
 .dropdown.active .option {
   display: block;
+}
+.imgdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+}
+.person-image {
+  width: 100px;
 }
 
 .buttons {
