@@ -57,7 +57,7 @@ body {
   position: absolute;
   top: 212px;
   left: 68px;
-  width: 615px;
+  max-width: 615px;
 }
 
 .form-section {
@@ -164,8 +164,8 @@ hr {
   color: red;
   content: "*";
   position: absolute;
-  top: 10px;
-  left: 135px;
+  top: 11px;
+  left: 155px;
 }
 .drop-down2-input-wrapper {
   align-items: center;
@@ -176,8 +176,8 @@ hr {
   color: red;
   content: "*";
   position: absolute;
-  top: 10px;
-  left: 160px;
+  top: 11px;
+  left: 185px;
 }
 
 .dropdown {

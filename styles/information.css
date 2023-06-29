@@ -58,7 +58,7 @@ body {
   position: absolute;
   top: 176px;
   left: 105px;
-  width: 423px;
+  max-width: 423px;
 }
 
 /************************************/

@@ -11,21 +11,39 @@ const personImage = document.querySelectorAll(".person-image");
 let dropdown2 = document.querySelector(".dropdown2");
 let character = "";
 let countOfYesAndNo = "";
+let characterId = "";
 
 //წითელი ვარსკვლავი
 
-function redStar(avto, ika) {
-  if (avto.value !== "") {
-    ika.style.display = "none";
+function redStar(a, b) {
+  if (a.value !== "") {
+    b.style.display = "none";
   } else {
-    ika.style.display = "inline";
+    b.style.display = "inline";
   }
 }
+
+// ვიღებთ ინფორმაციას ლინკიდან და გადავცემტ შესაბამის ელემენტებს
+
+fetch("https://chess-tournament-api.devtest.ge/api/grandmasters")
+  .then((response) => response.json())
+  .then((data) => {
+    // console.log(data);
+    for (let i = 0; i < 4; i++) {
+      personName[i].innerHTML = data[i].name;
+      personImage[i].src = data[i].image;
+      imageContainer[i].appendChild(personImage[i]);
+      characterId = data[i].id;
+    }
+  });
+
 // პერსონაჟს ვარჩევტ და გამოგვაქვს ინფუთის ეკრანზე
 
 imageContainer.forEach(function (element, index) {
   element.addEventListener("click", function () {
     textBox2.value = personName[index].innerHTML;
+    // userInformationObj["character_id"] = characterId[index];
+    // console.log(userInformationObj);
   });
 });
 
@@ -37,18 +55,6 @@ dropdown2.onclick = function () {
   localStorage.setItem("character", character);
   redStar(textBox2, star2);
 };
-// ვიღებთ ინფორმაციას ლინკიდან და გადავცემტ შესაბამის ელემენტებს
-
-fetch("https://chess-tournament-api.devtest.ge/api/grandmasters")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    for (let i = 0; i < 4; i++) {
-      personName[i].innerHTML = data[i].name;
-      personImage[i].src = data[i].image;
-      imageContainer[i].appendChild(personImage[i]);
-    }
-  });
 
 // ვიგებთ მომხმარებლის გამოცდილებას და გადავცემთ ლოკალ სთორს
 
@@ -72,7 +78,6 @@ inputYes.addEventListener("input", function () {
 });
 inputNo.addEventListener("input", function () {
   countOfYesAndNo = inputNo.value;
-
   localStorage.setItem("countOfYesAndNo", countOfYesAndNo);
 });
 
@@ -81,10 +86,8 @@ inputNo.addEventListener("input", function () {
 document.addEventListener("DOMContentLoaded", function () {
   textBox.value = localStorage.getItem("levelOfknowledge");
   textBox2.value = localStorage.getItem("character");
-
   redStar(textBox2, star2);
   redStar(textBox, star);
-
   const countOfYesAndNoValue = localStorage.getItem("countOfYesAndNo");
   if (countOfYesAndNoValue == "yes") {
     inputYes.checked = true;
