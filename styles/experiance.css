@@ -54,10 +54,9 @@ body {
 }
 
 .quote-author-div {
-  position: absolute;
-  top: 212px;
-  left: 68px;
   max-width: 615px;
+margin-left: 108px;
+padding-top: 160px;
 }
 
 .form-section {
