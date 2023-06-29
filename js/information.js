@@ -97,6 +97,7 @@ nextButton.addEventListener("click", function (event) {
       invalidEmailP.innerHTML += inputNames[i];
     }
   }
+
   if (Object.keys(userInformationObj).length == namesForObject.length) {
     for (let key in userInformationObj) {
       let index = namesForObject.indexOf(key);
