@@ -1,16 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&family=Open+Sans:wght@400;600&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   height: 100vh;
   display: grid;
   grid-template-columns: 45fr 55fr;
 }
+
+/************************************/
+/* HERO SECTION */
+/************************************/
 
 .hero-section {
   font-family: "Nunito", sans-serif;
@@ -25,6 +21,12 @@ body {
   background-color: #7025fb;
 }
 
+.hero-header-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
+
 .hero-section-body {
   height: 92%;
   background: url("../images/Redbeary.png");
@@ -32,10 +34,30 @@ body {
   background-repeat: no-repeat;
 }
 
-.hero-header-text {
-  color: white;
-  font-size: 22px;
+.quote {
   font-weight: 800;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #212529;
+}
+
+.author {
+  font-weight: 500;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #093f68;
+  margin-left: 340px;
+}
+
+.quote-author-div {
+  position: absolute;
+  top: 212px;
+  left: 68px;
+  width: 615px;
 }
 
 .form-section {
@@ -43,7 +65,10 @@ body {
 }
 
 .form-section-header {
-  padding: 30px 60px;
+  /* padding: 30px 60px; */
+  display: flex;
+  align-items: center;
+  padding-left: 48px;
   height: 8%;
   border-bottom: 1px solid rgba(185, 180, 195, 0.3);
   font-weight: 600;
@@ -60,7 +85,7 @@ body {
   align-items: center;
   gap: 5px;
   margin-bottom: 115px;
-  margin-left: 59px;
+  margin-left: 48px;
 }
 
 .success {
@@ -124,16 +149,13 @@ hr {
 
 .drop-down-options {
   display: flex;
-  margin-top: 100px;
+  margin-top: 95px;
   align-items: center;
 
   gap: 23px;
 }
 
-
-
 .drop-down-wrapper {
-
   align-items: center;
   display: flex;
   position: relative;
@@ -158,14 +180,12 @@ hr {
   left: 160px;
 }
 
-
 .dropdown {
   position: relative;
-  margin-top: 95px;
-  width: 300px;
+  width: 365px;
   height: 50px;
 }
-  
+
 .dropdown::before {
   content: "";
   position: absolute;
@@ -282,7 +302,6 @@ h4 {
 }
 
 .participated {
-
   margin-top: 80px;
 }
 
@@ -292,9 +311,8 @@ h4 {
   gap: 16px;
 }
 
-.star {
+.last-star {
   color: red;
   font-size: 16px;
   font-weight: 400;
 }
-
