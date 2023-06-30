@@ -1,6 +1,7 @@
 const allInput = document.querySelectorAll(".all-input");
 const erorP = document.querySelector(".eror-input-name");
 const erorWindow = document.querySelector(".eror-window");
+const backBtn = document.querySelector(".back-button");
 const personalInformacionBox = document.querySelector(
   ".personal-informacion-box"
 );
@@ -15,9 +16,9 @@ const nextButton = document.querySelector(".Next-button");
 const dateInput = allInput[3];
 let regexArray = [
   /^[a-zA-Z]+ [a-zA-Z]+$/, // fullNameTester
-  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, // emailTester
+  /^[a-zA-Z0-9._%+-]+@redberry.ge$/, // emailTester
   /^[0-9]{9}$/, // phoneNumberTester
-  /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19[0-9][0-9]|20[0-1][0-9]|2020|2021|2022|2023)$/, // dateOfBirthTester
+  /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(19[0-9][0-9]|20[0-3][0-9])$/, // dateOfBirthTester
 ];
 
 // x ნიშანი
@@ -103,7 +104,7 @@ nextButton.addEventListener("click", function (event) {
       let index = namesForObject.indexOf(key);
       if (index >= 0) {
         localStorage.setItem(namesForObject[index], userInformationObj[key]);
-        window.open("experiance.html");
+        window.open("experiance.html", "_self");
       }
     }
   }
@@ -121,3 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+// backBtn.addEventListener("click", function (event) {
+//   event.preventDefault();
+//   window.open("./index.html", "_self");
+// });

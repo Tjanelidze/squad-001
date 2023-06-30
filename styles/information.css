@@ -336,6 +336,11 @@ body {
 }
 
 .back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #212529;
   height: 53px;
   width: 93px;
   border-radius: 8px;
@@ -344,8 +349,8 @@ body {
   border: 1px solid rgba(33, 37, 41, 1);
   font-weight: 400;
   font-size: 20px;
-  line-height: 27.24px;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .Next-button {
@@ -363,4 +368,5 @@ body {
   line-height: 27px;
   color: rgb(203, 197, 197);
   text-transform: capitalize;
+  cursor: pointer;
 }

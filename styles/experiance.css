@@ -55,8 +55,8 @@ body {
 
 .quote-author-div {
   max-width: 615px;
-margin-left: 108px;
-padding-top: 160px;
+  margin-left: 108px;
+  padding-top: 160px;
 }
 
 .form-section {
@@ -85,6 +85,54 @@ padding-top: 160px;
   gap: 5px;
   margin-bottom: 115px;
   margin-left: 48px;
+}
+
+.eror-window {
+  position: absolute;
+  top: 200px;
+  right: 70px;
+  width: 320px;
+  border-radius: 4px;
+  border: 2px solid rgba(185, 180, 195, 0.3);
+  display: none;
+}
+
+.invalid-email {
+  height: 43%;
+  width: 100%;
+  border-bottom: 2px solid rgba(185, 180, 195, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.eror-sign-img {
+  width: 20px;
+  height: 20px;
+}
+
+.invalid-email-p {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: red;
+}
+
+.x-sign {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.eror-input-name {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  color: #212529;
+  font-size: 16px;
+  font-family: Open Sans;
+  line-height: 150%;
 }
 
 .success {
@@ -277,6 +325,7 @@ hr {
   font-size: 20px;
   line-height: 27.24px;
   text-transform: capitalize;
+  cursor: pointer;
 }
 .done-button {
   display: flex;
@@ -293,6 +342,7 @@ hr {
   line-height: 27px;
   color: rgb(203, 197, 197);
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 h4 {
@@ -314,4 +364,8 @@ h4 {
   color: red;
   font-size: 16px;
   font-weight: 400;
+}
+.input-yes,
+.input-no {
+  cursor: pointer;
 }
