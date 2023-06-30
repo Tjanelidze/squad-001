@@ -168,6 +168,7 @@ doneButton.addEventListener("click", function () {
     userInformationAndExperiance["character_id"] = Number(
       userInformationAndExperiance["character_id"]
     );
+
     fetch(url, {
       method: "POST",
       headers: {
