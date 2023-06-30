@@ -107,6 +107,7 @@ nextButton.addEventListener("click", function (event) {
         window.open("experiance.html", "_self");
       }
     }
+    erorWindow.style.display = "none";
   }
 });
 
@@ -122,8 +123,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-
-// backBtn.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   window.open("./index.html", "_self");
-// });

@@ -155,6 +155,7 @@ doneButton.addEventListener("click", function () {
   // ვაგზავნიტ ინფორმაციას api-ს გამოყენებით.
 
   if (erorCount === 0) {
+    erorWindow.style.display = "none";
     for (let key in userInformationAndExperiance) {
       userInformationAndExperiance[key] = localStorage
         .getItem(key)
