@@ -1,0 +1,371 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+}
+
+/************************************/
+/* HERO SECTION */
+/************************************/
+
+.hero-section {
+  font-family: "Nunito", sans-serif;
+}
+
+.hero-section-header {
+  height: 8%;
+  padding: 30px 60px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #7025fb;
+}
+
+.hero-header-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.hero-section-body {
+  height: 92%;
+  background: url("../images/Redbeary.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.quote {
+  font-weight: 800;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #212529;
+}
+
+.author {
+  font-weight: 500;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #093f68;
+  margin-left: 340px;
+}
+
+.quote-author-div {
+  max-width: 615px;
+  margin-left: 108px;
+  padding-top: 160px;
+}
+
+.form-section {
+  font-family: "Open Sans", sans-serif;
+}
+
+.form-section-header {
+  /* padding: 30px 60px; */
+  display: flex;
+  align-items: center;
+  padding-left: 48px;
+  height: 8%;
+  border-bottom: 1px solid rgba(185, 180, 195, 0.3);
+  font-weight: 600;
+  font-size: 16px;
+  color: #212529;
+}
+
+.form-section-body {
+  padding: 60px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 115px;
+  margin-left: 48px;
+}
+
+.eror-window {
+  position: absolute;
+  top: 200px;
+  right: 70px;
+  width: 320px;
+  border-radius: 4px;
+  border: 2px solid rgba(185, 180, 195, 0.3);
+  display: none;
+}
+
+.invalid-email {
+  height: 43%;
+  width: 100%;
+  border-bottom: 2px solid rgba(185, 180, 195, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.eror-sign-img {
+  width: 20px;
+  height: 20px;
+}
+
+.invalid-email-p {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: red;
+}
+
+.x-sign {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.eror-input-name {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  color: #212529;
+  font-size: 16px;
+  font-family: Open Sans;
+  line-height: 150%;
+}
+
+.success {
+  background-color: rgba(233, 250, 241, 1);
+  position: relative;
+}
+
+.success::after {
+  content: "Personal information";
+  position: absolute;
+  bottom: -30px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 158px;
+}
+
+/* მეორე მთავარი დივი */
+.number {
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #fff;
+  border: 2px solid #e5e6e8;
+  color: #212529;
+  position: relative;
+}
+
+.number::after {
+  content: "Chess experience";
+  position: absolute;
+  bottom: -30px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 131px;
+}
+
+.nav-box {
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 1);
+}
+
+h3 {
+  font-size: 14px;
+  color: rgba(149, 147, 154, 1);
+  margin-top: 3px;
+}
+
+hr {
+  width: 174px;
+  border-color: #e6e0e04d;
+}
+
+.drop-down-options {
+  display: flex;
+  margin-top: 95px;
+  align-items: center;
+
+  gap: 23px;
+}
+
+.drop-down-wrapper {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.star::after {
+  color: red;
+  content: "*";
+  position: absolute;
+  top: 11px;
+  left: 155px;
+}
+.drop-down2-input-wrapper {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.star2::after {
+  color: red;
+  content: "*";
+  position: absolute;
+  top: 11px;
+  left: 185px;
+}
+
+.dropdown {
+  position: relative;
+  width: 365px;
+  height: 50px;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  right: 20px;
+  top: 5px;
+  z-index: 10000;
+  width: 8px;
+  border: 1px solid #3333337e;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(-45deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.dropdown input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+  background: #fff;
+  border: none;
+  outline: none;
+  /* box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05); */
+  border-bottom: 1px solid rgba(161, 161, 161, 0.199);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #212529;
+}
+
+.dropdown .option {
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.055);
+  border: 1px solid rgba(119, 118, 118, 0.041);
+  border-radius: 2px;
+  overflow: hidden;
+  display: none;
+}
+
+.dropdown .option div {
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.dropdown .option div:hover {
+  background: rgba(247, 247, 249, 1);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.dropdown.active::before {
+  top: 10px;
+  transform: rotate(-225deg);
+}
+
+.dropdown.active .option {
+  display: block;
+}
+.imgdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+}
+.person-image {
+  width: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 174px;
+}
+.back-button {
+  height: 53px;
+  width: 93px;
+  border-radius: 8px;
+  background-color: white;
+  padding: 13px, 24px, 13px, 24px;
+  border: 1px solid rgba(33, 37, 41, 1);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.24px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.done-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 99px;
+  height: 53px;
+  border-radius: 8px;
+  padding: 13px, 24px, 13px, 24px;
+  border: none;
+  background-color: rgba(33, 37, 41, 1);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: rgb(203, 197, 197);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.participated {
+  margin-top: 80px;
+}
+
+.yesorno {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+}
+
+.last-star {
+  color: red;
+  font-size: 16px;
+  font-weight: 400;
+}
+.input-yes,
+.input-no {
+  cursor: pointer;
+}

@@ -15,19 +15,19 @@ body {
 }
 .hero-header-text {
   color: white;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 800;
 }
 
 .hero-section-body {
   height: 92%;
-  background: url(./img/unsplash_27LH_0jXKYI.svg);
+  background: url(../images/unsplash_27LH_0jXKYI.svg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .form-section {
-  background: url(./img/Onboarding\ completed!.png);
+  background: url(../images/Onboarding\ completed!.png);
   background-repeat: no-repeat;
   background-position: center;
 }

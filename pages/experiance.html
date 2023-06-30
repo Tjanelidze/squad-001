@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration-Chess experience</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/experiance.css" />
+  </head>
+  <body>
+    <div class="hero-section">
+      <header class="hero-section-header">
+        <img
+          class="hero-section-header-icon"
+          src="../images/Vector-icon.svg"
+          alt="Vector-icon"
+        />
+        <p class="hero-header-text">Redbarry Knight Cup</p>
+      </header>
+      <div class="hero-section-body">
+        <div class="quote-author-div">
+          <blockquote class="quote">
+            “Many have become chess masters; <br />
+            no one has become the master of chess.”
+          </blockquote>
+          <cite class="author">- Siegbert Tarrasch</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <header class="form-section-header">
+        <p>First Step Is Done, Continue To Finish Onboarding</p>
+      </header>
+      <div class="form-section-body">
+        <div class="container">
+          <div class="success nav-box">
+            <img
+              src="../images/Success-Icon.svg"
+              alt="Success-Icon"
+              class="Success-Icon"
+            />
+          </div>
+          <hr />
+          <div class="number nav-box">
+            <span>2</span>
+          </div>
+        </div>
+
+        <div class="eror-window">
+          <div class="invalid-email">
+            <img
+              class="eror-sign-img"
+              src="../images/eror-sign.png"
+              alt="eror-sign"
+            />
+            <p class="invalid-email-p">Invalid email</p>
+            <img class="x-sign" src="../images/x-sign.svg" alt="x-sign" />
+          </div>
+          <div class="eror-input-name">
+            <p class="eror-input-p">Please enter valid email address</p>
+          </div>
+        </div>
+        <div class="container2">
+          <h2>Chess experience</h2>
+          <h3>This Is Basic Information Fields</h3>
+        </div>
+
+        <div class="drop-down-options">
+          <div class="dropdown">
+            <div class="drop-down-input-wrapper">
+              <input
+                type="text"
+                class="textBox textBox1"
+                placeholder="level of knowledge"
+                readonly
+              />
+              <span class="star"></span>
+            </div>
+            <div class="option">
+              <div onclick="show('Beginner')">Beginner</div>
+              <div onclick="show('Intermediate')">Intermediate</div>
+              <div onclick="show('Professional')">Professional</div>
+            </div>
+          </div>
+          <div class="dropdown2 dropdown">
+            <div class="drop-down2-input-wrapper">
+              <input
+                type="text"
+                class="textBox2 textBox"
+                placeholder="Choose your character"
+                readonly
+              />
+              <span class="star2"></span>
+            </div>
+            <div class="option">
+              <div class="imgdiv">
+                <img src="" alt="image" class="person-image" />
+                <p class="imgtext"></p>
+              </div>
+              <div class="imgdiv">
+                <img src="" alt="image" class="person-image" />
+                <p class="imgtext"></p>
+              </div>
+              <div class="imgdiv">
+                <img src="" alt="image" class="person-image" />
+                <p class="imgtext"></p>
+              </div>
+              <div class="imgdiv">
+                <img src="" alt="image" class="person-image" />
+                <p class="imgtext"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="participated">
+          <p class="participated-text">
+            Have you participated in the Redberry Championship?<span
+              class="last-star"
+            >
+              *</span
+            >
+          </p>
+          <div class="yesorno">
+            <div class="yes">
+              <input
+                class="input-yes"
+                type="radio"
+                name="radio"
+                id="y1"
+                value="yes"
+              />
+              <label for="y1">Yes</label>
+            </div>
+            <div class="no">
+              <input
+                class="input-no"
+                type="radio"
+                name="radio"
+                id="n1"
+                value="no"
+              />
+              <label for="n1">no</label>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <a href="../pages/information.html"
+            ><button class="back-button">Back</button></a
+          >
+          <button class="done-button">Done</button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/experiance.js"></script>
+  </body>
+</html>
